@@ -17,6 +17,7 @@ unique_elements = name2+name1
 
 count = len(unique_elements)
 
+#method inspired by sai ashish (makeuseof)
 while len(relationships) > 1:
     index = count % len(relationships) -1
     if index >= 0:
