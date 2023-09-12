@@ -15,8 +15,17 @@ for i in name1_copy:
         name2.remove(i) 
 unique_elements = name2+name1
 
-index = len(unique_elements) % len(relationships)
-relationship = relationships[index]
+count = len(unique_elements)
 
+while len(relationships) > 1:
+    index = count % len(relationships) -1
+    if index >= 0:
+        right = relationships[index + 1:]
+        left = relationships[:index]
+        relationships = right + left
+    else:
+        relationships = relationships[:len(relationships) - 1]
 
-print(name11,'&',name12, "have", relationship, "relationship")
+print(name11,'&',name12, "have", *relationships, "relationship")
+
+relationships = ["Friends", "Lovers", "Affectionate", "Marriage", "Enemies", "Siblings"]
